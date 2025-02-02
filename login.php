@@ -1,4 +1,4 @@
-ceci est un code pour une machine de type ctf 
+ceci est un code pour une machine de type ctf . c'est normal que tout soit en clzir. c 'est justement l une des failles
 
 <?php
 
