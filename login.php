@@ -1,31 +1,27 @@
 <?php
-// Connexion à la base de données (simulée)
-$host = 'localhost';
-$db   = 'projet_demeter';
-$user = 'root';
-$pass = '';
 
-$conn = new mysqli($host, $user, $pass, $db);
+$db = sqlite_open('votre_base_de_donnees.db', 0666, $error);
 
-if ($conn->connect_error) {
-    die("Échec de la connexion à la base de données : " . $conn->connect_error);
+if (!$db) {
+    die($error);
 }
 
-// Récupération des données du formulaire
 $username = $_POST['username'];
 $password = $_POST['password'];
 
-// Requête SQL vulnérable à l'injection SQL
-$sql = "SELECT * FROM users WHERE username = '$username' AND password = '$password'";
-$result = $conn->query($sql);
+// Use a prepared statement to prevent SQL injection
+$stmt = sqlite_prepare($db, "SELECT * FROM users WHERE username = :username AND password = :password");
+sqlite_bind_param($stmt, ':username', $username);
+sqlite_bind_param($stmt, ':password', $password);
 
-if ($result->num_rows > 0) {
-    // Connexion réussie
+$result = sqlite_query($stmt);
+
+if (sqlite_num_rows($result) > 0) {
     header("Location: secret.php");
 } else {
-    // Connexion échouée
     echo "Nom d'utilisateur ou mot de passe incorrect.";
 }
 
-$conn->close();
+sqlite_close($db);
+
 ?>
