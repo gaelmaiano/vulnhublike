@@ -3,3 +3,4 @@ CREATE TABLE utilisateurs (
     nom_utilisateur TEXT UNIQUE NOT NULL,
     mot_de_passe TEXT NOT NULL
 );
+INSERT INTO utilisateurs (nom_utilisateur, mot_de_passe) VALUES ('hacker123', 'HERMESMESSAGER');
