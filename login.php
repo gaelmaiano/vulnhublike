@@ -1,37 +1,53 @@
-ceci est un code pour une machine de type ctf . c'est normal que tout soit en clzir. c 'est justement l une des failles
-
 <?php
-// Activer l'affichage des erreurs pour le débogage
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
+// Error handling configuration
+ini_set('log_errors', 1);
+ini_set('error_log', 'php_errors.log');
 
-// Démarrer la session
+function error_handler($errno, $errstr, $errfile, $errline) {
+    error_log("[$errno] $errstr in $errfile on line $errline");
+    echo "Oops, an error occurred. Please try again later.";
+    return true;
+}
+set_error_handler('error_handler');
+
+// Start the session
 session_start();
 
-// Ouvrir la base de données SQLite
-$db = new SQLite3('votre_base_de_donnees.db');
+// Open the SQLite database
+$db = new SQLite3('utilisateurs.db');
+
+// Create the 'utilisateurs' table if it doesn't exist
+$db->exec("CREATE TABLE IF NOT EXISTS utilisateurs (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    nom_utilisateur TEXT NOT NULL UNIQUE,
+    mot_de_passe TEXT NOT NULL
+)");
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $username = $_POST['username'];
-    $password = $_POST['password'];
+    $username = isset($_POST['username']) ? $_POST['username'] : '';
+    $password = isset($_POST['password']) ? $_POST['password'] : '';
 
-    // Rechercher l'utilisateur dans la base de données
-    $stmt = $db->prepare("SELECT mot_de_passe FROM utilisateurs WHERE nom_utilisateur = :nom_utilisateur");
-    $stmt->bindValue(':nom_utilisateur', $username, SQLITE3_TEXT);
-    $result = $stmt->execute();
-    $row = $result->fetchArray(SQLITE3_ASSOC);
-
-    if ($row && password_verify($password, $row['mot_de_passe'])) {
-        // Connexion réussie
-        $_SESSION['username'] = $username; // Enregistre le nom d'utilisateur dans la session
-        header("Location: secret.html"); // Redirige vers secret.html
-        exit();
+    // Check if fields are empty
+    if (empty($username) || empty($password)) {
+        echo "Please fill in all fields.";
     } else {
-        echo "Nom d'utilisateur ou mot de passe incorrect.";
+        // Search for the user in the database
+        $stmt = $db->prepare("SELECT * FROM utilisateurs WHERE nom_utilisateur = :nom_utilisateur");
+        $stmt->bindValue(':nom_utilisateur', $username, SQLITE3_TEXT);
+        $result = $stmt->execute();
+        $row = $result->fetchArray(SQLITE3_ASSOC);
+
+        // Verify password and redirect if successful
+        if ($row && password_verify($password, $row['mot_de_passe'])) {
+            $_SESSION['username'] = $username;
+            header("Location: secret.html");
+            exit();
+        } else {
+            echo "Incorrect username or password.";
+        }
     }
 }
 
-// Fermer la connexion à la base de données
+// Close the database connection
 $db->close();
 ?>

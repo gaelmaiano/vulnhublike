@@ -1,0 +1,29 @@
+[02-Feb-2025 11:55:52 Europe/Berlin] [2] SQLite3::prepare(): Unable to prepare statement: 1, no such table: utilisateurs dans C:\xampp\htdocs\monprojet\login.php à la ligne 24
+[02-Feb-2025 11:55:52 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to a member function bindValue() on bool in C:\xampp\htdocs\monprojet\login.php:25
+Stack trace:
+#0 {main}
+  thrown in C:\xampp\htdocs\monprojet\login.php on line 25
+[02-Feb-2025 11:57:43 Europe/Berlin] [2] SQLite3::prepare(): Unable to prepare statement: 1, no such table: utilisateurs dans C:\xampp\htdocs\monprojet\login.php à la ligne 24
+[02-Feb-2025 11:57:43 Europe/Berlin] Erreur lors de la préparation de la requête : no such table: utilisateurs
+[02-Feb-2025 11:57:57 Europe/Berlin] [2] SQLite3::prepare(): Unable to prepare statement: 1, no such table: utilisateurs dans C:\xampp\htdocs\monprojet\login.php à la ligne 24
+[02-Feb-2025 11:57:57 Europe/Berlin] Erreur lors de la préparation de la requête : no such table: utilisateurs
+[02-Feb-2025 11:58:55 Europe/Berlin] [2] SQLite3::prepare(): Unable to prepare statement: 1, no such table: utilisateurs dans C:\xampp\htdocs\monprojet\login.php à la ligne 24
+[02-Feb-2025 11:58:55 Europe/Berlin] Erreur lors de la préparation de la requête : no such table: utilisateurs
+[02-Feb-2025 11:59:00 Europe/Berlin] [2] SQLite3::prepare(): Unable to prepare statement: 1, no such table: utilisateurs dans C:\xampp\htdocs\monprojet\login.php à la ligne 24
+[02-Feb-2025 11:59:00 Europe/Berlin] Erreur lors de la préparation de la requête : no such table: utilisateurs
+[02-Feb-2025 12:01:22 Europe/Berlin] [2] SQLite3::prepare(): Unable to prepare statement: 1, no such table: utilisateurs dans C:\xampp\htdocs\monprojet\login.php à la ligne 24
+[02-Feb-2025 12:01:22 Europe/Berlin] Erreur lors de la préparation de la requête : no such table: utilisateurs
+[02-Feb-2025 12:01:27 Europe/Berlin] [2] SQLite3::prepare(): Unable to prepare statement: 1, no such table: utilisateurs dans C:\xampp\htdocs\monprojet\login.php à la ligne 24
+[02-Feb-2025 12:01:27 Europe/Berlin] Erreur lors de la préparation de la requête : no such table: utilisateurs
+[02-Feb-2025 12:01:35 Europe/Berlin] [2] SQLite3::prepare(): Unable to prepare statement: 1, no such table: utilisateurs dans C:\xampp\htdocs\monprojet\login.php à la ligne 24
+[02-Feb-2025 12:01:35 Europe/Berlin] Erreur lors de la préparation de la requête : no such table: utilisateurs
+[02-Feb-2025 12:02:32 Europe/Berlin] [2] SQLite3::prepare(): Unable to prepare statement: 1, no such table: utilisateurs dans C:\xampp\htdocs\monprojet\login.php à la ligne 24
+[02-Feb-2025 12:02:32 Europe/Berlin] Erreur lors de la préparation de la requête : no such table: utilisateurs
+[02-Feb-2025 12:05:01 Europe/Berlin] [2] SQLite3::prepare(): Unable to prepare statement: 1, no such table: utilisateurs dans C:\xampp\htdocs\monprojet\login.php à la ligne 24
+[02-Feb-2025 12:05:01 Europe/Berlin] Erreur lors de la préparation de la requête : no such table: utilisateurs
+[02-Feb-2025 12:05:04 Europe/Berlin] [2] SQLite3::prepare(): Unable to prepare statement: 1, no such table: utilisateurs dans C:\xampp\htdocs\monprojet\login.php à la ligne 24
+[02-Feb-2025 12:05:04 Europe/Berlin] Erreur lors de la préparation de la requête : no such table: utilisateurs
+[02-Feb-2025 12:05:07 Europe/Berlin] [2] SQLite3::prepare(): Unable to prepare statement: 1, no such table: utilisateurs dans C:\xampp\htdocs\monprojet\login.php à la ligne 24
+[02-Feb-2025 12:05:07 Europe/Berlin] Erreur lors de la préparation de la requête : no such table: utilisateurs
+[02-Feb-2025 12:05:40 Europe/Berlin] [2] SQLite3::prepare(): Unable to prepare statement: 1, no such table: utilisateurs dans C:\xampp\htdocs\monprojet\login.php à la ligne 24
+[02-Feb-2025 12:05:40 Europe/Berlin] Erreur lors de la préparation de la requête : no such table: utilisateurs
