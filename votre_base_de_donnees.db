@@ -1,1 +1,5 @@
-
+CREATE TABLE utilisateurs (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    nom_utilisateur TEXT UNIQUE NOT NULL,
+    mot_de_passe TEXT NOT NULL
+);
