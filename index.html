@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projet Déméter - Connexion</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+   <H1>PROJECT DEMETER</H1>
+        <button id="playButton">Play</button>
+        <div class="video-container">
+            <video id="video-background" >
+                <source src="Vidéo sans titre ‐ Réalisée avec Clipchamp (2) - Copie.mp4"" type="video/mp4">
+                Votre navigateur ne supporte pas la vidéo.
+            </video>
+        </div>
+    
+
+    <div class="login-container">
+        <h1>Bienvenue sur le serveur du projet Déméter</h1>
+        <p>Veuillez vous connecter pour accéder aux archives.</p>
+        <form action="login.php" method="POST">
+            <label for="username">Nom d'utilisateur :</label>
+            <input type="text" id="username" name="username" required><br><br>
+
+            <label for="password">Mot de passe :</label>
+            <input type="password" id="password" name="password" required><br><br>
+
+            <button type="submit">Se connecter</button>
+        </form>
+    </div>
+</body>
+</html>
+<script>  //  <--- Add this opening tag
+    const video = document.getElementById('video-background');
+    const playButton = document.getElementById('playButton');
+
+    playButton.addEventListener('click', () => {
+        if (video.paused) {
+            video.play();
+            playButton.textContent = 'Pause';
+        } else {
+            video.pause();
+            playButton.textContent = 'Play';
+        }
+    });
+</script>  

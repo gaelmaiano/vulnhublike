@@ -1,0 +1,125 @@
+/* Reset des styles par défaut */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Styles généraux */
+body {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #1a1a1a;
+    color: #00ff00;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+h1, h2, h3 {
+    color: #00ff00;
+    text-shadow: 0 0 5px #00ff00;
+    text-align: center;
+}
+
+a {
+    color: #00ff00;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Conteneur principal */
+.login-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #262626;
+    border: 1px solid #00ff00;
+    box-shadow: 0 0 10px #00ff00;
+}
+
+/* Formulaire */
+form {
+    margin-top: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #00ff00;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #333;
+    border: 1px solid #00ff00;
+    color: #00ff00;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #00ff00;
+    border: none;
+    color: #1a1a1a;
+    cursor: pointer;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: #00cc00;
+}
+
+/* Messages d'erreur */
+.error {
+    color: #ff0000;
+    margin-top: 10px;
+}
+
+/* Page secrète */
+.secret-page {
+    text-align: center;
+    padding: 50px;
+}
+
+.secret-page h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.secret-page p {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+/* Page de recherche */
+.search-results {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #333;
+    border: 1px solid #00ff00;
+}
+
+/* Footer */
+footer {
+    margin-top: 40px;
+    text-align: center;
+    font-size: 0.9em;
+    color: #666;
+}
+
+/* Styles pour la vidéo */
+.video-container {
+    width: 100%;
+    margin-bottom: 20px; /* Espacement entre la vidéo et le formulaire */
+}
+
+#video-background {
+    width: 100%;
+    height: auto;
+    display: block; /* Empêcher l'espace sous la vidéo */
+}
