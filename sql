@@ -1,16 +1,17 @@
+<?php
 
+$db = sqlite_open('votre_base_de_donnees.db', 0666, $error);
 
-CEci est un projet volontairement fragile pour une machine type ctf
+if (!$db) {
+    die($error);
+}
 
-CREATE DATABASE projet_demeter;
-USE projet_demeter;
+$result = sqlite_query("SELECT * FROM ma_table", $db);
 
-CREATE TABLE users (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    username VARCHAR(50) NOT NULL,
-    password VARCHAR(50) NOT NULL
-);
+while ($row = sqlite_fetch_array($result)) {
+    echo $row['nom'] . "<br>";
+}
 
-INSERT INTO users (username, password) VALUES
-('admin', 'admin123'), -- Mot de passe faible pour faciliter l'exploitation
-('hermes', 'hacker123');
+sqlite_close($db);
+
+?>
